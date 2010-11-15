@@ -32,13 +32,16 @@ set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_BINARY_DIR}/dist")
 set(HDRS
 	GameServer.h
 	../breslinlistenserver/ListenServer.h
-	
+	../breslinmessagehandler/MessageHandler.h
+	../breslinclient/Client.h	
 
 )
 
 set(SRCS
 	GameServer.cpp
 	../breslinlistenserver/ListenServer.cpp
+	../breslinmessagehandler/MessageHandler.cpp
+	../breslinclient/Client.cpp
 	Main.cpp
 
 )
@@ -46,12 +49,5 @@ set(SRCS
 
 
 add_executable(GameServer WIN32 ${HDRS} ${SRCS})
-
-#set_target_properties(GameServer PROPERTIES DEBUG_POSTFIX _d)
-
-
-#file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/dist/bin)
-
-
 
 

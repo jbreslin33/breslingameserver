@@ -1,17 +1,24 @@
 #include "GameServer.h"
 #include "../breslinlistenserver/ListenServer.h"
+#include "../breslinmessagehandler/MessageHandler.h"
 
 #include <iostream>
 #include <string>
 
 int main()
 {
-    std::cout << "Launching GameServer..." << std::endl;
+	std::cout << "Creating Generic GameServer..." << std::endl;
+	GameServer*     gameServer     = new GameServer    ();
+	
+	std::cout << "Creating pointer to  Generic GameServer..." << std::endl;
+    	ListenServer*   listenServer   = new ListenServer  ();
 
-    GameServer*   gameServer   = new GameServer  ();
-    ListenServer* listenServer = new ListenServer();
+	std::cout << "Creating pointer to Generic MessageHandler..." << std::endl;
+	MessageHandler* messageHandler = new MessageHandler();
+    
+	listenServer->setMessageHandler(messageHandler);
 
-    listenServer->setGameServer(gameServer);
+	messageHandler->setGameServer(gameServer);
 
 
     bool gameOn = true;
