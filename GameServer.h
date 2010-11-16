@@ -11,6 +11,8 @@ Filename:    GameServer.h
 #include <vector>
 
 class Client;
+class MessageHandler;
+class Listener;
 
 class GameServer
 {
@@ -27,13 +29,6 @@ public:
 	
 	//Listener
 	void setListener(Listener* listener) { mListener = listener; }
-	
-
-	
-	
-	
-	
-	
 	
     	void processClientMessage(char newClientMessage[10]);
 
