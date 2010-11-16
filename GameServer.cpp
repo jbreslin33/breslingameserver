@@ -5,6 +5,7 @@ Filename:    GameServer.cpp
 
 #include "GameServer.h"
 #include "../breslinclient/Client.h"
+#include "../breslinlistenserver/ListenServer.h"
 
 #include <iostream>
 
@@ -13,6 +14,15 @@ GameServer::GameServer()
 {
 	std::cout << "Creating GameServer\n";
 	
+	ListenServer* listenServer = new ListenServer();
+	
+	//lets run loop here for now........
+	bool serverOn = true;
+	while (serverOn)
+	{	
+		listenServer->processRequests();
+
+	}
 	
 
 //	mClient             = new Client            ();
