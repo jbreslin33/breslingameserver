@@ -19,19 +19,35 @@ public:
     GameServer();
     virtual ~GameServer(void);
     	
-	//accept new clients
+	//Clients
     	void addNewClient(Client* client) { clientVector.push_back(client); }
 	
-	//login
-	bool checkUserNamePassword    (char* username, char* password);
-	bool checkUserNameAvailability(char* username);
+	//messages
+	void setMessageHandler(MessageHandler* messageHandler) { mMessageHandler = messageHandler; }
 	
-	//messaging
+	//Listener
+	void setListener(Listener* listener) { mListener = listener; }
+	
+
+	
+	
+	
+	
+	
+	
     	void processClientMessage(char newClientMessage[10]);
 
+
 protected:
+	//Clients
 	std::vector<Client*> clientVector;
-	Client* client;
+	Client* mClient;
+
+	//Messages
+	MessageHandler* mMessageHandler;
+
+	//Listener
+	Listener* mListener;
 };
 
 #endif
