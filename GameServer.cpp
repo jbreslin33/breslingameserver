@@ -14,7 +14,7 @@ GameServer::GameServer()
 {
 	std::cout << "Creating GameServer\n";
 	
-	ListenServer* listenServer = new ListenServer();
+	mListenServer = new ListenServer();
 	
 	//lets run loop here for now........
 	bool serverOn = true;

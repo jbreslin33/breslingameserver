@@ -12,7 +12,7 @@ Filename:    GameServer.h
 
 class Client;
 class MessageHandler;
-class Listener;
+class ListenServer;
 
 class GameServer
 {
@@ -26,10 +26,14 @@ public:
 	
 	//messages
 	void setMessageHandler(MessageHandler* messageHandler) { mMessageHandler = messageHandler; }
+ 	MessageHandler* getMessageHandler() { return mMessageHandler; }
 	
 	//Listener
-	void setListener(Listener* listener) { mListener = listener; }
+	void setListener(ListenServer* listenServer) { mListenServer = listenServer; }
+	ListeneServer* getListenServer() { return mListenServer; }
 	
+	
+
     	void processClientMessage(char newClientMessage[10]);
 
 
@@ -42,7 +46,7 @@ protected:
 	MessageHandler* mMessageHandler;
 
 	//Listener
-	Listener* mListener;
+	ListenServer* mListenServer;
 };
 
 #endif
