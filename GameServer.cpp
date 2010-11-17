@@ -12,18 +12,18 @@ Filename:    GameServer.cpp
 //-------------------------------------------------------------------------------------
 GameServer::GameServer()
 {
-	std::cout << "Creating GameServer\n";
+	std::cout << "GameServer Constructor\n";
 	
+	std::cout << "Create instance of ListenServer in GameServer Constructor\n";
 	mListenServer = new ListenServer();
-	
-	//lets run loop here for now........
+/*	
 	bool serverOn = true;
 	while (serverOn)
 	{	
-		listenServer->processRequests();
+		mListenServer->processRequests();
 
 	}
-	
+*/	
 
 //	mClient             = new Client            ();
 //	client->setUsername("jbreslin");

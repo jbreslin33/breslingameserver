@@ -27,14 +27,11 @@ public:
 	//messages
 	void setMessageHandler(MessageHandler* messageHandler) { mMessageHandler = messageHandler; }
  	MessageHandler* getMessageHandler() { return mMessageHandler; }
+    	void processClientMessage(char newClientMessage[10]);
 	
 	//Listener
 	void setListener(ListenServer* listenServer) { mListenServer = listenServer; }
-	ListeneServer* getListenServer() { return mListenServer; }
-	
-	
-
-    	void processClientMessage(char newClientMessage[10]);
+	ListenServer* getListenServer() { return mListenServer; }
 
 
 protected:
