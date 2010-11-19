@@ -13,20 +13,10 @@ Filename:    GameServer.cpp
 GameServer::GameServer()
 {
 	std::cout << "GameServer Constructor\n";
+  	mMessageHandler = NULL;
+	mListenServer   = NULL;
+	mGame           = NULL;
 	
-	std::cout << "Create instance of ListenServer in GameServer Constructor\n";
-	mListenServer = new ListenServer();
-/*	
-	bool serverOn = true;
-	while (serverOn)
-	{	
-		mListenServer->processRequests();
-
-	}
-*/	
-
-//	mClient             = new Client            ();
-//	client->setUsername("jbreslin");
 }
 //-------------------------------------------------------------------------------------
 GameServer::~GameServer(void)
