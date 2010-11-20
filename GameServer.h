@@ -38,7 +38,11 @@ public:
 	void            setGame             (Game*           game          )  { mGame         = game;            }
 	Game*           getGame             (                              )  { return mGame;                     }
 
+	void            joinGame            (std::string userName          );
+	void            leaveGame           (std::string userName          );
 
+
+	
 protected:
 
 	//Clients
