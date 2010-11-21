@@ -32,8 +32,13 @@ void GameServer::processClientMessage(char newClientMessage[10])
 void GameServer::joinGame(std::string userName)
 {
 	std::cout << "in joinGame\n";
-	int i = clientVector.size();
-	std::cout << "unscathed\n";	
+	int size = clientVector.size();
+	std::cout << "unscathed\n";
+	for (int i = 0; i < size; i++)
+	{	
+		std::cout << "in loop\n";	
+	}
+
 /*
 	for (int i=0; i < clientVector.size(); i++)
 	{
