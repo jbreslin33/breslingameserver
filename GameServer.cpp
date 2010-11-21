@@ -16,7 +16,7 @@ GameServer::GameServer()
   	mMessageHandler = NULL;
 	mListenServer   = NULL;
 	mGame           = NULL;
-	
+int i = clientVector.size();	
 }
 //-------------------------------------------------------------------------------------
 GameServer::~GameServer(void)
@@ -31,8 +31,14 @@ void GameServer::processClientMessage(char newClientMessage[10])
 
 void GameServer::joinGame(std::string userName)
 {
+	std::cout << "in joinGame\n";
+	int i = clientVector.size();
+	std::cout << "unscathed\n";	
+/*
 	for (int i=0; i < clientVector.size(); i++)
 	{
+		std::cout << "in loop\n";
+
 		if (clientVector.at(i)->getUserName().compare(userName) == 0)
 		{
 			std::cout << "You are unique sir, you may join!\n";
@@ -43,6 +49,7 @@ void GameServer::joinGame(std::string userName)
 			std::cout << "You need to be original to join this game biter\n";
 		}
 	}
+*/
 }
 
 void GameServer::leaveGame(std::string userName)
