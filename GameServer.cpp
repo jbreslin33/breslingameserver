@@ -29,10 +29,10 @@ void GameServer::processClientMessage(char newClientMessage[10])
 
 }
 
-void GameServer::joinGame(std::string userName)
+void GameServer::joinGame(std::string userName, std::string ipOfClient, std::string port)
 {
 
-	//other wise check to see if name is taken
+	//check to see if name is taken then create a client.
 	bool nameAvailable = true;
 	
 	for (int i = 0; i < clientVector.size(); i++)

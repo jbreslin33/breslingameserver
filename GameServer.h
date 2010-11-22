@@ -38,7 +38,7 @@ public:
 	void            setGame             (Game*           game          )  { mGame         = game;            }
 	Game*           getGame             (                              )  { return mGame;                     }
 
-	void            joinGame            (std::string userName          );
+	void            joinGame            (std::string userName, std::string ip, std::string port          );
 	void            leaveGame           (std::string userName          );
 
 
