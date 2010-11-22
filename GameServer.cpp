@@ -31,13 +31,6 @@ void GameServer::processClientMessage(char newClientMessage[10])
 
 void GameServer::joinGame(std::string userName)
 {
-	if (clientVector.empty())
-	{
-		std::cout << "your the first client eva!\n";
-	        Client* newClient = new Client(userName);
-		addNewClient(newClient);
-		return;	
-	}
 
 	//other wise check to see if name is taken
 	bool nameAvailable = true;
