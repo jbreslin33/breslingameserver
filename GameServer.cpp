@@ -31,30 +31,38 @@ void GameServer::processClientMessage(char newClientMessage[10])
 
 void GameServer::joinGame(std::string userName)
 {
-	std::cout << "in joinGame\n";
-	int size = clientVector.size();
-	std::cout << "unscathed\n";
-	for (int i = 0; i < size; i++)
-	{	
-		std::cout << "in loop\n";	
+	if (clientVector.empty())
+	{
+		std::cout << "your the first client eva!\n";
+	        Client* newClient = new Client(userName);
+		addNewClient(newClient);
+		return;	
 	}
 
-/*
-	for (int i=0; i < clientVector.size(); i++)
+	//other wise check to see if name is taken
+	bool nameAvailable = true;
+	
+	for (int i = 0; i < clientVector.size(); i++)
 	{
-		std::cout << "in loop\n";
+		std::cout << "looping clients\n";
 
 		if (clientVector.at(i)->getUserName().compare(userName) == 0)
 		{
-			std::cout << "You are unique sir, you may join!\n";
-			Client* newClient = new Client(userName);	
-		}
-		else
-		{
-			std::cout << "You need to be original to join this game biter\n";
+			nameAvailable = false;
 		}
 	}
-*/
+	
+	if (nameAvailable)
+	{
+		std::cout << "You are unique sir, you may join!\n";
+		Client* newClient = new Client(userName);
+		addNewClient(newClient);	
+	}
+	else
+	{
+
+		std::cout << "You need to be original to join this game biter\n";
+	}
 }
 
 void GameServer::leaveGame(std::string userName)
